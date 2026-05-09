@@ -179,18 +179,13 @@
       min-height: 320px;
     }
 
-    /* Replace this div with an <img> tag once you have a photo */
-    .photo-placeholder {
+    .hero-right img {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: #2a3040;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
-    .photo-placeholder i { font-size: 48px; }
-    .photo-placeholder span { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
 
     /* ── SECTIONS ── */
     section {
@@ -204,13 +199,6 @@
       gap: 1rem;
       margin-bottom: 1.75rem;
     }
-    .section-header h2 {
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--dim);
-    }
     .section-header::after {
       content: '';
       flex: 1;
@@ -221,12 +209,20 @@
     /* ── BOOK ── */
     .book-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
+      font-size: 28px;
       font-weight: 300;
       font-style: italic;
       color: var(--cream);
       line-height: 1.35;
       margin-bottom: 0.85rem;
+    }
+
+    .section-header h2 {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
     }
 
     .book-body {
@@ -243,7 +239,7 @@
     .dataset:first-child { border-top: 1px solid var(--border-sub); }
 
     a.dataset-name {
-      font-size: 17px;
+      font-size: 20px;
       color: var(--cream);
       line-height: 1.5;
       margin-bottom: 3px;
@@ -254,7 +250,7 @@
     a.dataset-name:hover { color: var(--gold); }
 
     span.dataset-name {
-      font-size: 17px;
+      font-size: 20px;
       color: var(--cream);
       line-height: 1.5;
       margin-bottom: 3px;
@@ -268,7 +264,7 @@
 
     /* ── PUBLICATIONS ── */
     .pub-group {
-      font-size: 13px;
+      font-size: 17px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--gold);
@@ -296,7 +292,7 @@
     }
 
     a.pub-name {
-      font-size: 17px;
+      font-size: 20px;
       line-height: 1.5;
       margin-bottom: 4px;
       text-decoration: none;
@@ -307,7 +303,7 @@
     a.pub-name:hover { color: var(--gold); }
 
     span.pub-name {
-      font-size: 17px;
+      font-size: 20px;
       line-height: 1.5;
       margin-bottom: 4px;
       color: var(--cream);
@@ -364,7 +360,13 @@
     }
     .contact-link:last-child { margin-bottom: 0; }
     .contact-link:hover { color: var(--gold); }
-    .contact-link i { font-size: 20px; color: var(--gold); flex-shrink: 0; }
+    .contact-link .contact-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: var(--gold);
+      transition: color 0.18s;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -427,7 +429,7 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="photo.jpg" alt="Kaitlyn Robinson" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+      <img src="photo.JPG" alt="Kaitlyn Robinson" />
     </div>
   </div>
 
@@ -438,7 +440,7 @@
     </div>
     <p class="book-title">The Foreign Foundations of Civil War: International Politics and the Organization of Rebellion</p>
     <p class="book-body">
-      States frequently seek to engage in proxy conflict to achieve their foreign policy objectives. While many states provide support to armed groups already engaged in conflict against a target government, some states — such as Iran, Rwanda, and Russia — choose to form new armed groups to serve as their proxies. These new groups are organized with the direct help of state sponsors, receiving foreign assistance in mobilizing and recruiting members, selecting leaders, and building organizational structures and military capacity. Why do states create new armed groups rather than support existing ones? Drawing on a large-N dataset and archival case studies, this book introduces a new theory of founding support — explaining why, how, and under what conditions states pursue this delegation strategy, and showing that foreign-founded groups prove more capable and more violent than independently formed ones.
+      Why do states create new armed groups rather than support existing ones? Drawing on a large-N dataset and archival case studies, this book introduces a theory of founding support — explaining why, how, and under what conditions states pursue this delegation strategy, and showing that foreign-founded groups prove more capable and more violent than independently formed ones.
     </p>
   </section>
 
@@ -451,33 +453,31 @@
     <!-- Replace href with real URL -->
     <div class="dataset">
       <a href="https://mappingmilitants.org" target="_blank" class="dataset-name">Mapping Militants Project</a>
-      <p class="dataset-meta">Principal Investigator · Rice University </p>
+      <p class="dataset-meta">Principal Investigator · Rice University / Stanford CISAC · 130+ profiles</p>
     </div>
 
     <!-- No link yet — will be added when data is ready -->
     <div class="dataset">
       <span class="dataset-name">Foreign Foundations Dataset, 1946–2019</span>
-      <p class="dataset-meta">Quantitative data collected for book project that codes the nature and extent of external state involvement in armed group formation for 500+ rebel groups </p>
+      <p class="dataset-meta">500+ armed groups coded globally</p>
     </div>
 
     <!-- No link yet — will be added when data is ready -->
     <div class="dataset">
-      <span class="dataset-name">Splintering &amp; Leadership Change in Myanmar, 1939-2019</span>
-      <p class="dataset-meta">Quantitative dataset that codes instances of splintering and leadership change in 43 armed groups operating in Myanmar </p>
+      <span class="dataset-name">Splintering &amp; Leadership Change in Myanmar</span>
+      <p class="dataset-meta">43 armed groups · 1939–2019</p>
     </div>
 
     <!-- Replace href with real URL -->
     <div class="dataset">
-      <a href="https://www.prio.org/journals/jpr/replicationdata" target="_blank" class="dataset-name">Rebel Leader Purging and Exit in Asia, 1989–2011</a>
-      <p class="dataset-meta">Quantitative dataset that codes when and how rebel leaders exited their leadership positions, as well as if they used any purging in their organizations, for 72 rebel groups in Asia </p>
+      <a href="#" target="_blank" class="dataset-name">Rebel Leader Purging and Exit in Asia</a>
+      <p class="dataset-meta">72 rebel groups · 1989–2011</p>
     </div>
   </section>
 
   <!-- ── PUBLICATIONS ── -->
   <section id="publications">
-    <div class="section-header">
-      <h2>Publications</h2>
-    </div>
+    <div class="section-header" aria-hidden="true" style="display:none;"></div>
 
     <p class="pub-group">Academic Publications</p>
 
@@ -601,7 +601,7 @@
     </div>
     <div class="contact-grid">
       <div>
-        <p class="contact-label">Institution</p>
+        <p class="contact-label">Mailing Address</p>
         <p class="contact-val">Department of Political Science</p>
         <p class="contact-sub">Rice University, MS-24</p>
         <p class="contact-sub">P.O. Box 1892</p>
@@ -609,12 +609,12 @@
       </div>
       <div>
         <a href="mailto:krobinson@rice.edu" class="contact-link">
-          <i class="ti ti-mail"></i>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           krobinson@rice.edu
         </a>
         <!-- Replace href with your Google Scholar URL -->
         <a href="#" target="_blank" class="contact-link">
-          <i class="ti ti-school"></i>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           Google Scholar
         </a>
       </div>
