@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaitlyn Robinson · Political Science · Rice University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:        #0d1018;
+      --bg-dark:   #090c14;
+      --border:    #1c2230;
+      --border-sub:#151c28;
+      --gold:      #c9a96e;
+      --gold-dim:  #5a4520;
+      --cream:     #ede8e0;
+      --muted:     #a0aab8;
+      --dim:       #8090a8;
+      --dimmer:    #606880;
+      --dimmest:   #2e3850;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--cream);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 300;
+      letter-spacing: 0.07em;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      color: var(--dim);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-cv {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-cv:hover { color: var(--cream); border-color: var(--cream); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      min-height: 420px;
+    }
+
+    .hero-left {
+      padding: 4rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border-right: 1px solid var(--border);
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    h1.name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      line-height: 0.88;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+    }
+    h1.name em {
+      display: block;
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-body {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 400px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--cream);
+      color: var(--bg);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold); color: var(--bg); }
+
+    .btn-ghost {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-decoration: none;
+      border-bottom: 1px solid #2a3040;
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--cream); }
+
+    .hero-right {
+      background: var(--bg-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+    }
+
+    /* Replace this div with an <img> tag once you have a photo */
+    .photo-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #2a3040;
+    }
+    .photo-placeholder i { font-size: 36px; }
+    .photo-placeholder span { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 2.5rem 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .section-header h2 {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── BOOK ── */
+    .book-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.35;
+      margin-bottom: 0.85rem;
+    }
+
+    .book-body {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    /* ── DATA ── */
+    .dataset {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    .dataset:first-child { border-top: 1px solid var(--border-sub); }
+
+    a.dataset-name {
+      font-size: 14px;
+      color: var(--cream);
+      line-height: 1.5;
+      margin-bottom: 3px;
+      text-decoration: none;
+      display: block;
+      transition: color 0.18s;
+    }
+    a.dataset-name:hover { color: var(--gold); }
+
+    span.dataset-name {
+      font-size: 14px;
+      color: var(--cream);
+      line-height: 1.5;
+      margin-bottom: 3px;
+      display: block;
+    }
+
+    .dataset-meta {
+      font-size: 13px;
+      color: var(--dim);
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-group {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 1.75rem 0 0.5rem 0;
+    }
+    .pub-group:first-child { margin-top: 0; }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 0.75rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    .pub:last-child { border-bottom: none; }
+
+    .pub-year {
+      font-size: 12px;
+      color: var(--dimmer);
+      padding-top: 2px;
+    }
+    .pub-year.dash {
+      color: var(--dimmest);
+      text-align: center;
+    }
+
+    a.pub-name {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 3px;
+      text-decoration: none;
+      color: var(--cream);
+      transition: color 0.18s;
+      display: block;
+    }
+    a.pub-name:hover { color: var(--gold); }
+
+    span.pub-name {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 3px;
+      color: var(--cream);
+      display: block;
+    }
+
+    .pub-venue {
+      font-size: 13px;
+      color: var(--dim);
+      font-style: italic;
+    }
+
+    .pub-co {
+      font-size: 12px;
+      color: var(--dimmer);
+      margin-top: 2px;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #4a5870;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-val {
+      font-size: 15px;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-sub {
+      font-size: 13px;
+      color: var(--dim);
+    }
+
+    .contact-link {
+      font-size: 14px;
+      color: var(--cream);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+      transition: color 0.18s;
+    }
+    .contact-link:last-child { margin-bottom: 0; }
+    .contact-link:hover { color: var(--gold); }
+    .contact-link i { font-size: 17px; color: var(--gold); flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+
+    footer span {
+      font-size: 11px;
+      color: var(--dimmer);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-dot { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 2.5rem 1.25rem; }
+      h1.name { font-size: 52px; }
+      section { padding: 2rem 1.25rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      footer { padding: 1rem 1.25rem; flex-direction: column; gap: 0.25rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="#top" class="nav-name">Kaitlyn Robinson</a>
+    <ul class="nav-links">
+      <li><a href="#book">Book</a></li>
+      <li><a href="#data">Data</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <!-- Replace href with the path to your CV PDF, e.g. href="cv/robinson-cv.pdf" -->
+    <a href="robinson-cv.pdf" target="_blank" class="nav-cv">Download CV ↓</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <div class="hero" id="top">
+    <div class="hero-left">
+      <p class="hero-tag">Assistant Professor · Rice University</p>
+      <h1 class="name">Kaitlyn<em>Robinson</em></h1>
+      <p class="hero-body">
+        I study how international and organizational politics shape the behavior of militant groups and the dynamics of civil war — drawing on original datasets, fieldwork, and archival documents.
+      </p>
+      <div class="hero-actions">
+        <!-- Replace href with the path to your CV PDF -->
+        <a href="robinson-cv.pdf" target="_blank" class="btn-primary">View CV</a>
+        <a href="#contact" class="btn-ghost">Get in touch →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!--
+        Replace this div with your photo like so:
+        <img src="images/robinson.jpg" alt="Kaitlyn Robinson" style="width:100%;height:100%;object-fit:cover;" />
+      -->
+      <div class="photo-placeholder">
+        <i class="ti ti-user"></i>
+        <span>Your photo here</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BOOK PROJECT ── -->
+  <section id="book">
+    <div class="section-header">
+      <h2>Book Project</h2>
+    </div>
+    <p class="book-title">The Foreign Foundations of Civil War: International Politics and the Organization of Rebellion</p>
+    <p class="book-body">
+      Why do states create new armed groups rather than support existing ones? Drawing on a large-N dataset and archival case studies, this book introduces a theory of founding support — explaining why, how, and under what conditions states pursue this delegation strategy, and showing that foreign-founded groups prove more capable and more violent than independently formed ones.
+    </p>
+  </section>
+
+  <!-- ── ORIGINAL DATA COLLECTION ── -->
+  <section id="data">
+    <div class="section-header">
+      <h2>Original Data Collection</h2>
+    </div>
+
+    <!-- Replace href with real URL -->
+    <div class="dataset">
+      <a href="https://mappingmilitants.org" target="_blank" class="dataset-name">Mapping Militants Project</a>
+      <p class="dataset-meta">Principal Investigator · Rice University / Stanford CISAC · 130+ profiles</p>
+    </div>
+
+    <!-- No link yet — will be added when data is ready -->
+    <div class="dataset">
+      <span class="dataset-name">Foreign Foundations Dataset, 1946–2019</span>
+      <p class="dataset-meta">500+ armed groups coded globally</p>
+    </div>
+
+    <!-- No link yet — will be added when data is ready -->
+    <div class="dataset">
+      <span class="dataset-name">Splintering &amp; Leadership Change in Myanmar</span>
+      <p class="dataset-meta">43 armed groups · 1939–2019</p>
+    </div>
+
+    <!-- Replace href with real URL -->
+    <div class="dataset">
+      <a href="#" target="_blank" class="dataset-name">Rebel Leader Purging and Exit in Asia</a>
+      <p class="dataset-meta">72 rebel groups · 1989–2011</p>
+    </div>
+  </section>
+
+  <!-- ── PUBLICATIONS ── -->
+  <section id="publications">
+    <div class="section-header">
+      <h2>Publications</h2>
+    </div>
+
+    <p class="pub-group">Academic Publications</p>
+
+    <div class="pub">
+      <span class="pub-year">2026</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">Rebel Purges and Leader Survival: Maintaining Power through Purges in Rebel Organizations</a>
+        <p class="pub-venue">Journal of Peace Research</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year">2024</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">Militant Splinter Groups and the Use of Violence</a>
+        <p class="pub-venue">Journal of Conflict Resolution 68, no. 2-3: 404–430</p>
+        <p class="pub-co">with Iris Malone</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year">2023</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">Countering Far-Right Anti-Government Extremism in the United States</a>
+        <p class="pub-venue">Perspectives on Terrorism 17, no. 1: 73–87</p>
+        <p class="pub-co">with Iris Malone and Martha Crenshaw</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year">2021</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">The Oath Keepers</a>
+        <p class="pub-venue">Dynamics of Asymmetric Conflict 14, no. 2: 160–178</p>
+        <p class="pub-co">with Andrew Lokay and Martha Crenshaw</p>
+      </div>
+    </div>
+
+    <p class="pub-group">Working Papers</p>
+
+    <div class="pub">
+      <span class="pub-year dash">—</span>
+      <div>
+        <span class="pub-name">The Mapping Militants Project: A Resource for Studying Militant Group Dynamics and Networks</span>
+        <p class="pub-co">with Martha Crenshaw · Under Review</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year dash">—</span>
+      <div>
+        <span class="pub-name">Foreign State-Sponsored Rebel Formation and Violence in Civil War</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year dash">—</span>
+      <div>
+        <span class="pub-name">Fending off Fragmentation: How Rebel Leaders Manage Internal Splits</span>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year dash">—</span>
+      <div>
+        <span class="pub-name">From Local to Transnational: When Rebel Violence Travels Across Borders</span>
+        <p class="pub-co">with Martha Crenshaw</p>
+      </div>
+    </div>
+
+    <p class="pub-group">Policy &amp; Opinion</p>
+
+    <div class="pub">
+      <span class="pub-year">2023</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">Transnational Ties Between Selected US and Foreign Violent Extremist Actors</a>
+        <p class="pub-venue">NCITE</p>
+        <p class="pub-co">with Martha Crenshaw</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year">2023</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">In Brief: The Resistance in Myanmar</a>
+        <p class="pub-venue">War on the Rocks</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year">2022</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">To Support Democracy in Myanmar, Engage with Ethnic Armed Organizations</a>
+        <p class="pub-venue">War on the Rocks</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year">2020</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">Why the US Police Should Read 'Just War' Theory</a>
+        <p class="pub-venue">International Affairs Blog</p>
+        <p class="pub-co">with Lauren Sukin</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <span class="pub-year">2014</span>
+      <div>
+        <!-- Replace href with real URL -->
+        <a href="#" target="_blank" class="pub-name">Measuring Success in the War on Drugs</a>
+        <p class="pub-venue">Perry Center Occasional Paper · U.S. Department of Defense</p>
+        <p class="pub-co">with Pat Paterson</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-header">
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-label">Institution</p>
+        <p class="contact-val">Department of Political Science</p>
+        <p class="contact-sub">Rice University · Houston, TX</p>
+      </div>
+      <div>
+        <!-- Replace with your real email -->
+        <a href="mailto:kaitlyn.robinson@rice.edu" class="contact-link">
+          <i class="ti ti-mail"></i>
+          kaitlyn.robinson@rice.edu
+        </a>
+        <!-- Replace href with your Google Scholar URL -->
+        <a href="#" target="_blank" class="contact-link">
+          <i class="ti ti-brand-google"></i>
+          Google Scholar
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span>© 2026 Kaitlyn Robinson</span>
+    <span><span class="footer-dot">·</span> Rice University · Political Science</span>
+  </footer>
+
+</body>
+</html>
