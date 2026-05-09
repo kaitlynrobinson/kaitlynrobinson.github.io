@@ -21,10 +21,10 @@
       --gold:      #c9a96e;
       --gold-dim:  #5a4520;
       --cream:     #ede8e0;
-      --muted:     #a0aab8;
-      --dim:       #8090a8;
-      --dimmer:    #606880;
-      --dimmest:   #2e3850;
+      --muted:     #c0c8d8;
+      --dim:       #a8b4c8;
+      --dimmer:    #8898b0;
+      --dimmest:   #506070;
     }
 
     body {
@@ -49,7 +49,7 @@
 
     .nav-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 19px;
+      font-size: 22px;
       font-weight: 300;
       letter-spacing: 0.07em;
       color: var(--cream);
@@ -63,7 +63,7 @@
     }
 
     .nav-links a {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--dim);
       text-decoration: none;
       letter-spacing: 0.1em;
@@ -74,7 +74,7 @@
     .nav-links a:hover { color: var(--cream); }
 
     .nav-cv {
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold);
@@ -89,19 +89,18 @@
     .hero {
       display: grid;
       grid-template-columns: 3fr 2fr;
-      min-height: 420px;
     }
 
     .hero-left {
-      padding: 4rem 2.5rem;
+      padding: 3rem 2.5rem;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       border-right: 1px solid var(--border);
     }
 
     .hero-tag {
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gold);
@@ -134,10 +133,10 @@
     }
 
     .hero-body {
-      font-size: 15px;
+      font-size: 17px;
       line-height: 1.85;
       color: var(--muted);
-      max-width: 400px;
+      max-width: 480px;
       margin-bottom: 2.25rem;
     }
 
@@ -150,18 +149,18 @@
     .btn-primary {
       background: var(--cream);
       color: var(--bg);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 10px 24px;
+      padding: 12px 28px;
       text-decoration: none;
       transition: background 0.2s, color 0.2s;
     }
     .btn-primary:hover { background: var(--gold); color: var(--bg); }
 
     .btn-ghost {
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--dim);
@@ -175,17 +174,15 @@
     .hero-right {
       background: var(--bg-dark);
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
-      min-height: 380px;
+      overflow: hidden;
+      min-height: 320px;
     }
 
     /* Replace this div with an <img> tag once you have a photo */
     .photo-placeholder {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -193,8 +190,8 @@
       gap: 8px;
       color: #2a3040;
     }
-    .photo-placeholder i { font-size: 36px; }
-    .photo-placeholder span { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .photo-placeholder i { font-size: 48px; }
+    .photo-placeholder span { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
 
     /* ── SECTIONS ── */
     section {
@@ -209,7 +206,7 @@
       margin-bottom: 1.75rem;
     }
     .section-header h2 {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -234,7 +231,7 @@
     }
 
     .book-body {
-      font-size: 15px;
+      font-size: 18px;
       line-height: 1.85;
       color: var(--muted);
       max-width: 680px;
@@ -248,7 +245,7 @@
     .dataset:first-child { border-top: 1px solid var(--border-sub); }
 
     a.dataset-name {
-      font-size: 14px;
+      font-size: 17px;
       color: var(--cream);
       line-height: 1.5;
       margin-bottom: 3px;
@@ -259,7 +256,7 @@
     a.dataset-name:hover { color: var(--gold); }
 
     span.dataset-name {
-      font-size: 14px;
+      font-size: 17px;
       color: var(--cream);
       line-height: 1.5;
       margin-bottom: 3px;
@@ -267,13 +264,13 @@
     }
 
     .dataset-meta {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--dim);
     }
 
     /* ── PUBLICATIONS ── */
     .pub-group {
-      font-size: 11px;
+      font-size: 13px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--gold);
@@ -283,15 +280,15 @@
 
     .pub {
       display: grid;
-      grid-template-columns: 44px 1fr;
+      grid-template-columns: 52px 1fr;
       gap: 0.75rem;
-      padding: 0.8rem 0;
+      padding: 0.9rem 0;
       border-bottom: 1px solid var(--border-sub);
     }
     .pub:last-child { border-bottom: none; }
 
     .pub-year {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--dimmer);
       padding-top: 2px;
     }
@@ -301,9 +298,9 @@
     }
 
     a.pub-name {
-      font-size: 14px;
+      font-size: 17px;
       line-height: 1.5;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       text-decoration: none;
       color: var(--cream);
       transition: color 0.18s;
@@ -312,21 +309,21 @@
     a.pub-name:hover { color: var(--gold); }
 
     span.pub-name {
-      font-size: 14px;
+      font-size: 17px;
       line-height: 1.5;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       color: var(--cream);
       display: block;
     }
 
     .pub-venue {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--dim);
       font-style: italic;
     }
 
     .pub-co {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--dimmer);
       margin-top: 2px;
     }
@@ -339,7 +336,7 @@
     }
 
     .contact-label {
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #4a5870;
@@ -347,18 +344,18 @@
     }
 
     .contact-val {
-      font-size: 15px;
+      font-size: 17px;
       color: var(--cream);
       margin-bottom: 0.2rem;
     }
 
     .contact-sub {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--dim);
     }
 
     .contact-link {
-      font-size: 14px;
+      font-size: 17px;
       color: var(--cream);
       text-decoration: none;
       display: flex;
@@ -369,7 +366,7 @@
     }
     .contact-link:last-child { margin-bottom: 0; }
     .contact-link:hover { color: var(--gold); }
-    .contact-link i { font-size: 17px; color: var(--gold); flex-shrink: 0; }
+    .contact-link i { font-size: 20px; color: var(--gold); flex-shrink: 0; }
 
     /* ── FOOTER ── */
     footer {
@@ -381,7 +378,7 @@
     }
 
     footer span {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--dimmer);
       letter-spacing: 0.06em;
     }
@@ -496,8 +493,7 @@
     <div class="pub">
       <span class="pub-year">2026</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">Rebel Purges and Leader Survival: Maintaining Power through Purges in Rebel Organizations</a>
+        <a href="https://doi.org/10.1093/jopres/xjag009" target="_blank" class="pub-name">Rebel Purges and Leader Survival: Maintaining Power through Purges in Rebel Organizations</a>
         <p class="pub-venue">Journal of Peace Research</p>
       </div>
     </div>
@@ -505,8 +501,7 @@
     <div class="pub">
       <span class="pub-year">2024</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">Militant Splinter Groups and the Use of Violence</a>
+        <a href="https://doi.org/10.1177/00220027231165466" target="_blank" class="pub-name">Militant Splinter Groups and the Use of Violence</a>
         <p class="pub-venue">Journal of Conflict Resolution 68, no. 2-3: 404–430</p>
         <p class="pub-co">with Iris Malone</p>
       </div>
@@ -515,8 +510,7 @@
     <div class="pub">
       <span class="pub-year">2023</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">Countering Far-Right Anti-Government Extremism in the United States</a>
+        <a href="https://pt.icct.nl/article/countering-far-right-anti-government-extremism-united-states" target="_blank" class="pub-name">Countering Far-Right Anti-Government Extremism in the United States</a>
         <p class="pub-venue">Perspectives on Terrorism 17, no. 1: 73–87</p>
         <p class="pub-co">with Iris Malone and Martha Crenshaw</p>
       </div>
@@ -525,8 +519,7 @@
     <div class="pub">
       <span class="pub-year">2021</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">The Oath Keepers</a>
+        <a href="https://www.tandfonline.com/doi/full/10.1080/17467586.2021.1912375" target="_blank" class="pub-name">The Oath Keepers</a>
         <p class="pub-venue">Dynamics of Asymmetric Conflict 14, no. 2: 160–178</p>
         <p class="pub-co">with Andrew Lokay and Martha Crenshaw</p>
       </div>
@@ -569,9 +562,8 @@
     <div class="pub">
       <span class="pub-year">2023</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">Transnational Ties Between Selected US and Foreign Violent Extremist Actors</a>
-        <p class="pub-venue">NCITE</p>
+        <a href="https://digitalcommons.unomaha.edu/ncitereportsresearch/44/" target="_blank" class="pub-name">Transnational Ties Between Selected US and Foreign Violent Extremist Actors</a>
+        <p class="pub-venue">National Counterterrorism Innovation, Technology, and Education Center (NCITE)</p>
         <p class="pub-co">with Martha Crenshaw</p>
       </div>
     </div>
@@ -579,8 +571,7 @@
     <div class="pub">
       <span class="pub-year">2023</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">In Brief: The Resistance in Myanmar</a>
+        <a href="https://warontherocks.com/2023/11/in-brief-the-resistance-in-myanmar/" target="_blank" class="pub-name">In Brief: The Resistance in Myanmar</a>
         <p class="pub-venue">War on the Rocks</p>
       </div>
     </div>
@@ -588,8 +579,7 @@
     <div class="pub">
       <span class="pub-year">2022</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">To Support Democracy in Myanmar, Engage with Ethnic Armed Organizations</a>
+        <a href="https://warontherocks.com/2022/01/to-support-democracy-in-myanmar-engage-with-ethnic-armed-organizations" target="_blank" class="pub-name">To Support Democracy in Myanmar, Engage with Ethnic Armed Organizations</a>
         <p class="pub-venue">War on the Rocks</p>
       </div>
     </div>
@@ -597,8 +587,7 @@
     <div class="pub">
       <span class="pub-year">2020</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">Why the US Police Should Read 'Just War' Theory</a>
+        <a href="https://medium.com/international-affairs-blog/fsf-pandemic-politics-us-police-just-war-theory-1f210054e5fc" target="_blank" class="pub-name">Why the US Police Should Read 'Just War' Theory</a>
         <p class="pub-venue">International Affairs Blog</p>
         <p class="pub-co">with Lauren Sukin</p>
       </div>
@@ -607,8 +596,7 @@
     <div class="pub">
       <span class="pub-year">2014</span>
       <div>
-        <!-- Replace href with real URL -->
-        <a href="#" target="_blank" class="pub-name">Measuring Success in the War on Drugs</a>
+        <a href="https://williamjperrycenter.org/content/measuring-success-war-drugs" target="_blank" class="pub-name">Measuring Success in the War on Drugs</a>
         <p class="pub-venue">Perry Center Occasional Paper · U.S. Department of Defense</p>
         <p class="pub-co">with Pat Paterson</p>
       </div>
@@ -624,17 +612,18 @@
       <div>
         <p class="contact-label">Institution</p>
         <p class="contact-val">Department of Political Science</p>
-        <p class="contact-sub">Rice University · Houston, TX</p>
+        <p class="contact-sub">Rice University, MS-24</p>
+        <p class="contact-sub">P.O. Box 1892</p>
+        <p class="contact-sub">Houston, TX 77251-1892</p>
       </div>
       <div>
-        <!-- Replace with your real email -->
-        <a href="mailto:kaitlyn.robinson@rice.edu" class="contact-link">
+        <a href="mailto:krobinson@rice.edu" class="contact-link">
           <i class="ti ti-mail"></i>
-          kaitlyn.robinson@rice.edu
+          krobinson@rice.edu
         </a>
         <!-- Replace href with your Google Scholar URL -->
         <a href="#" target="_blank" class="contact-link">
-          <i class="ti ti-brand-google"></i>
+          <i class="ti ti-school"></i>
           Google Scholar
         </a>
       </div>
