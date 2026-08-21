@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graduate Study · Kaitlyn Robinson · Rice University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7WRYFQJVC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E7WRYFQJVC');
+  </script>
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:        #0d1018;
+      --bg-dark:   #090c14;
+      --border:    #1c2230;
+      --border-sub:#151c28;
+      --gold:      #c9a96e;
+      --gold-dim:  #5a4520;
+      --cream:     #ede8e0;
+      --muted:     #c0c8d8;
+      --dim:       #a8b4c8;
+      --dimmer:    #8898b0;
+      --dimmest:   #506070;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--cream);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 4rem;
+    }
+
+    .nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.07em;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--dim);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-cv {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-cv:hover { color: var(--cream); border-color: var(--cream); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+    }
+
+    .hero-left {
+      padding: 3.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .hero-tag {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    h1.name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      line-height: 0.88;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+    }
+    h1.name em {
+      display: block;
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-body {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--cream);
+      color: var(--bg);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold); color: var(--bg); }
+
+    .btn-ghost {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-decoration: none;
+      border-bottom: 1px solid #2a3040;
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--cream); }
+
+    .hero-right {
+      background: var(--bg-dark);
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 320px;
+      padding: 2rem;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 2.5rem 4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── BOOK ── */
+    .book-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.35;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-header h2 {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .book-body {
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    /* ── DATA ── */
+    .dataset {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    .dataset:first-child { border-top: 1px solid var(--border-sub); }
+
+    a.dataset-name {
+      font-size: 20px;
+      color: var(--cream);
+      line-height: 1.5;
+      margin-bottom: 3px;
+      text-decoration: none;
+      display: block;
+      transition: color 0.18s;
+    }
+    a.dataset-name:hover { color: var(--gold); }
+
+    span.dataset-name {
+      font-size: 20px;
+      color: var(--cream);
+      line-height: 1.5;
+      margin-bottom: 3px;
+      display: block;
+    }
+
+    .dataset-meta {
+      font-size: 15px;
+      color: var(--dim);
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-group {
+      font-size: 17px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 1.75rem 0 0.5rem 0;
+    }
+    .pub-group:first-child { margin-top: 0; }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0.75rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    .pub:last-child { border-bottom: none; }
+
+    .pub-year {
+      font-size: 14px;
+      color: var(--dimmer);
+      padding-top: 2px;
+    }
+    .pub-year.dash {
+      color: var(--dimmest);
+      text-align: center;
+    }
+
+    a.pub-name {
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 4px;
+      text-decoration: none;
+      color: var(--cream);
+      transition: color 0.18s;
+      display: block;
+    }
+    a.pub-name:hover { color: var(--gold); }
+
+    span.pub-name {
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 4px;
+      color: var(--cream);
+      display: block;
+    }
+
+    .pub-venue {
+      font-size: 15px;
+      color: var(--dim);
+      font-style: italic;
+    }
+
+    .pub-co {
+      font-size: 14px;
+      color: var(--dimmer);
+      margin-top: 2px;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #4a5870;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-val {
+      font-size: 17px;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-sub {
+      font-size: 15px;
+      color: var(--dim);
+    }
+
+    .contact-link {
+      font-size: 17px;
+      color: var(--cream);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+      transition: color 0.18s;
+    }
+    .contact-link:last-child { margin-bottom: 0; }
+    .contact-link:hover { color: var(--gold); }
+    .contact-link .contact-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: var(--gold);
+      transition: color 0.18s;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.25rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+    }
+
+    footer span {
+      font-size: 13px;
+      color: var(--dimmer);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-dot { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 2.5rem 1.5rem; }
+      h1.name { font-size: 52px; }
+      section { padding: 2rem 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      footer { padding: 1rem 1.5rem; flex-direction: column; gap: 0.25rem; text-align: center; }
+    }
+
+    /* ── SECONDARY PAGE ── */
+    .page-header {
+      padding: 3.5rem 4rem 2.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      line-height: 0.95;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: -0.01em;
+      margin: 1.25rem 0 1.25rem;
+    }
+    .lead {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+    .prose {
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+    .prose p { margin-bottom: 1.4rem; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose a, .lead a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      transition: color 0.18s, border-color 0.18s;
+    }
+    .prose a:hover, .lead a:hover { color: var(--cream); border-color: var(--cream); }
+    .resource-intro {
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      max-width: 70ch;
+    }
+    .closing {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 25px;
+      color: var(--gold);
+    }
+    .nav-links a[aria-current="page"] { color: var(--cream); }
+
+    .link-list { list-style: none; }
+    .link-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.7rem;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .link-list li:last-child { margin-bottom: 0; }
+    .link-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.66em;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .link-list a {
+      color: var(--cream);
+      text-decoration: underline;
+      text-decoration-color: var(--gold-dim);
+      text-underline-offset: 3px;
+      transition: color 0.18s, text-decoration-color 0.18s;
+    }
+    .link-list a:hover { color: var(--gold); text-decoration-color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .page-header { padding: 2.5rem 1.5rem 2rem; }
+      .page-title { font-size: 44px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="index.html" class="nav-name">Kaitlyn Robinson</a>
+    <ul class="nav-links">
+      <li><a href="index.html#book">Book</a></li>
+      <li><a href="index.html#publications">Publications</a></li>
+      <li><a href="index.html#data">Data</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="graduate-study.html" aria-current="page">Prospective PhD Students</a></li>
+    </ul>
+    <!-- Replace href with the path to your CV PDF -->
+    <a href="robinson-cv.pdf" target="_blank" class="nav-cv">Download CV ↓</a>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header">
+    <h1 class="page-title">Information for Prospective Graduate Students</h1>
+  </header>
+
+  <!-- ── APPLYING ── -->
+  <section>
+    <div class="section-header">
+      <h2>Applying to Rice</h2>
+    </div>
+    <div class="prose">
+      <p>Students interested in pursuing a PhD in political science at Rice University should apply for admission through the Department of Political Science. Directions on how to apply can be found <a href="https://politicalscience.rice.edu/apply" target="_blank" rel="noopener">on the department&rsquo;s admissions page</a>.</p>
+      <p>Students do not apply to work with a specific professor at Rice. Admissions decisions are made by a departmental committee, and students are admitted to the department as a whole. In line with this process, I do not commit to working with specific students before they are admitted to the program.</p>
+      <p>The large majority of students who apply to the program do so without an advisor already selected. In other words, you do not need a professor who has already agreed to be your advisor before you apply. For more information, see the department&rsquo;s <a href="https://politicalscience.rice.edu/graduate/application-faqs" target="_blank" rel="noopener">frequently asked questions for applicants</a>.</p>
+    </div>
+  </section>
+
+  <!-- ── LEARNING MORE ── -->
+  <section>
+    <div class="section-header">
+      <h2>Learning More About Rice</h2>
+    </div>
+    <p class="resource-intro">If you&rsquo;re interested in learning more about graduate study at Rice, I encourage you to consult these resources:</p>
+
+    <ul class="link-list">
+      <li><a href="https://gradadmissions.rice.edu/portal/coffee-chats" target="_blank" rel="noopener">Graduate Admissions Coffee Chats</a></li>
+      <li><a href="https://graduate.rice.edu/request-information" target="_blank" rel="noopener">Request Information</a></li>
+    </ul>
+  </section>
+
+  <!-- ── PREPARING YOUR APPLICATION ── -->
+  <section>
+    <div class="section-header">
+      <h2>Preparing Your Application</h2>
+    </div>
+    <p class="resource-intro">If you&rsquo;re looking for more general guidance on how to prepare your application, I&rsquo;d encourage you to consult these resources:</p>
+
+    <ul class="link-list">
+      <li><a href="https://chrisblattman.com/blog/2022/03/25/faqs-on-phd-applications/" target="_blank" rel="noopener">Dr. Chris Blattman&rsquo;s general advice about applying to PhD programs</a></li>
+      <li><a href="https://jkertzer.sites.fas.harvard.edu/prospective.html" target="_blank" rel="noopener">Dr. Josh Kertzer&rsquo;s advice and resources for applying to graduate school</a></li>
+      <li><a href="https://af4.cf3.mwp.accessdomain.com/blog/2022/01/11/phd-applicants-writing-your-statement-of-purpose/" target="_blank" rel="noopener">Dr. Chris Blattman&rsquo;s advice on Statements of Purpose</a></li>
+      <li><a href="https://yuhuawang.scholars.harvard.edu/sites/g/files/omnuum8221/files/yuhuawang/files/writing_statement_of_purpose_for_graduate_school_application_2021_yuhua_wang_0.pdf" target="_blank" rel="noopener">Dr. Yuhua Wang&rsquo;s advice on Statements of Purpose</a></li>
+    </ul>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span>© 2026 Kaitlyn Robinson</span>
+    <span><span class="footer-dot">·</span> Rice University · Political Science</span>
+  </footer>
+
+</body>
+</html>
