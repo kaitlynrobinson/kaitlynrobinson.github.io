@@ -432,13 +432,11 @@
       font-size: 18px;
       line-height: 1.8;
       color: var(--muted);
-      max-width: 62ch;
     }
     .prose {
       font-size: 18px;
       line-height: 1.85;
       color: var(--muted);
-      max-width: 70ch;
     }
     .prose p { margin-bottom: 1.4rem; }
     .prose p:last-child { margin-bottom: 0; }
@@ -454,7 +452,6 @@
       line-height: 1.85;
       color: var(--muted);
       margin-bottom: 1.25rem;
-      max-width: 70ch;
     }
     .closing {
       font-family: 'Source Serif 4', Georgia, serif;
@@ -464,7 +461,7 @@
     }
     .nav-links a[aria-current="page"] { color: var(--cream); }
 
-    .link-list { list-style: none; }
+    .link-list { list-style: none; margin-left: 1.75rem; }
     .link-list li {
       position: relative;
       padding-left: 1.4rem;
@@ -492,9 +489,49 @@
     }
     .link-list a:hover { color: var(--gold); text-decoration-color: var(--gold); }
 
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border-sub); }
+    .faq-item:first-child { border-top: 1px solid var(--border-sub); }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.25rem;
+      padding: 1.1rem 0;
+      font-size: 20px;
+      line-height: 1.5;
+      color: var(--cream);
+      transition: color 0.18s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { color: var(--gold); }
+    .faq-item summary:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+    .faq-item summary::after {
+      content: '+';
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 22px;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item .prose { padding: 0 0 1.75rem; }
+    .faq-item .link-list { margin-top: -0.4rem; margin-bottom: 1.4rem; }
+    .faq-item .link-list:last-child { margin-bottom: 0; }
+    .prose .link-list a { border-bottom: none; }
+    .prose .note {
+      font-size: 16px;
+      color: var(--dim);
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 1rem;
+    }
+
     @media (max-width: 768px) {
       .page-header { padding: 2.5rem 1.5rem 2rem; }
       .page-title { font-size: 44px; }
+      .faq-item summary { font-size: 18px; }
     }
   </style>
 </head>
@@ -528,6 +565,78 @@
       <p>Students interested in pursuing a PhD in political science at Rice University should apply for admission through the Department of Political Science. Directions on how to apply can be found <a href="https://politicalscience.rice.edu/apply" target="_blank" rel="noopener">on the department&rsquo;s admissions page</a>.</p>
       <p>Admissions decisions are made by a departmental committee. Students are admitted to the department as a whole, not to work with a single professor. In line with this process, I do not commit to working with specific students before they are admitted to the program.</p>
       <p>In your application, you should discuss which professors you would be excited to work with, but you do not need to contact those professors before you apply or secure their endorsement. For more information, see the department&rsquo;s <a href="https://politicalscience.rice.edu/graduate/application-faqs" target="_blank" rel="noopener">frequently asked questions for applicants</a>.</p>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq">
+    <div class="section-header">
+      <h2>Questions You Might Have</h2>
+    </div>
+    <div class="faq">
+
+      <details class="faq-item" id="faq-fit">
+        <summary>How do I know if I&rsquo;m a good fit for the program?</summary>
+        <div class="prose">
+          <p>There are two ways you can determine whether you would be a good fit for the program.</p>
+          <p>First, you should assess whether your research interests fit with the tenure-track faculty in Rice&rsquo;s Department of Political Science. To do this, you should look through the <a href="https://politicalscience.rice.edu/faculty" target="_blank" rel="noopener">directory of faculty</a>.</p>
+          <p class="note">Note: Teaching professors and lecturers do not advise graduate students at Rice.</p>
+          <p>You should be able to identify at least two professors who research topics related to your own research area of interest. Those professors do not have to work on the same exact thing you want to research, but they should study a topic that is at least adjacent to your interests. For example, my research focuses on the international and organizational factors that shape the emergence and behavior of violent non-state armed groups. My primary advising strength is civil war, but I can also advise students who work on topics related to international security, armed conflict, foreign policy, and political violence.</p>
+          <p>If it is difficult for you to find at least two professors who work on topics related to your research interests, then Rice is probably not a good fit for you. You should find other political science departments that have more faculty aligned with your interests.</p>
+          <p>Second, you should think about whether your desired approach to research fits with how Rice&rsquo;s program trains graduate students. The Rice political science PhD program has a heavy quantitative emphasis. All PhD students are required to take multiple statistics courses where they have to complete mathematical proofs and learn to write code in the program R. If your research interests are entirely qualitative (e.g., you only want to conduct case studies, interviews, etc.), then you are likely not a good fit for our program. We can support students who want to combine case studies with more quantitative work (i.e., a statistical analysis or a formal model), but we generally do not take on students who do entirely qualitative research. Additionally, if you are not excited about taking several math-heavy courses, then you should consider other programs with different course requirements.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need an advisor before I apply?</summary>
+        <div class="prose">
+          <p>No, you do not need an advisor. Unlike PhD programs in Europe, political science PhD students in the United States are not admitted to work with a single professor. I do not have a set of students who I choose to admit every year. Relatedly, I do not &ldquo;take on&rdquo; students and commit to advising them in their first year.</p>
+          <p>At Rice, students apply to be admitted to the department as a whole. Admitted students take two years of classes without an advisor. They choose an advisor in their third year of the program. At that point, I commit to working with students. I do not make any commitments before a student&rsquo;s third year.</p>
+          <p>In my opinion, it is often a bad idea to apply to a program where you are excited to work with only one single professor. That professor may go on leave or relocate to another university, which interrupts your graduate studies. Instead, I would advise students to only apply to programs where they are excited to work with at least 2&ndash;3 professors.</p>
+          <p>This is strategic for two reasons. First, at Rice, all PhD students need to build a dissertation committee with 3 professors. Even if you only want to work with one specific professor, you will ultimately have to ask 2 other professors to advise your dissertation research. Second, you give yourself many options just in case one of the professors you wanted to work with unexpectedly becomes unavailable.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can you look at my CV or my research proposal?</summary>
+        <div class="prose">
+          <p>I do not read CVs or application materials in advance. I receive many emails from prospective students each year, and I unfortunately do not have the time or resources to provide individualized advice or feedback to everyone.</p>
+          <p>If you are looking for advice on how to prepare your materials, I encourage you to consult these resources:</p>
+          <ul class="link-list">
+            <li><a href="https://chrisblattman.com/blog/2022/03/25/faqs-on-phd-applications/" target="_blank" rel="noopener">Dr. Chris Blattman&rsquo;s general advice about applying to PhD programs</a></li>
+            <li><a href="https://jkertzer.sites.fas.harvard.edu/prospective.html" target="_blank" rel="noopener">Dr. Josh Kertzer&rsquo;s advice and resources for applying to graduate school</a></li>
+            <li><a href="https://af4.cf3.mwp.accessdomain.com/blog/2022/01/11/phd-applicants-writing-your-statement-of-purpose/" target="_blank" rel="noopener">Dr. Chris Blattman&rsquo;s advice on Statements of Purpose</a></li>
+            <li><a href="https://yuhuawang.scholars.harvard.edu/sites/g/files/omnuum8221/files/yuhuawang/files/writing_statement_of_purpose_for_graduate_school_application_2021_yuhua_wang_0.pdf" target="_blank" rel="noopener">Dr. Yuhua Wang&rsquo;s advice on Statements of Purpose</a></li>
+          </ul>
+          <p>If you need help assessing whether you are a good fit for Rice, please see my response to the question about <a href="#faq-fit" onclick="document.getElementById('faq-fit').open = true;">program fit</a> on this webpage.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to email professors at Rice before I apply?</summary>
+        <div class="prose">
+          <p>No, you do not need to email professors. I would advise against it. I receive many emails from prospective graduate students every year, and I unfortunately do not have time to give everyone personal responses or advice.</p>
+          <p>Contacting me in advance does not help your application or improve your chances for admission to the program. Admissions decisions are made by committee (not by a single professor) and are based on your submitted application materials. I cannot unilaterally admit students, and I do not keep track of who emails me and who does not.</p>
+          <p>Emailing a professor in advance will not help your application, and I advise against doing so.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>If I shouldn&rsquo;t email professors, then how do I learn more about the program before I apply?</summary>
+        <div class="prose">
+          <p>There are several resources you can use to learn more about the PhD program in political science and about graduate life at Rice.</p>
+          <p>The political science department organizes virtual &ldquo;coffee hours&rdquo; with current faculty and graduate students who can directly answer your questions:</p>
+          <ul class="link-list">
+            <li><a href="https://politicalscience.rice.edu/graduate-programs" target="_blank" rel="noopener">Attend a &ldquo;Virtual Coffee Hour&rdquo; with department faculty, staff, and students (see dates at bottom of page)</a></li>
+          </ul>
+          <p>For logistical questions, you should read the political science department&rsquo;s <a href="https://politicalscience.rice.edu/graduate/apply" target="_blank" rel="noopener">admissions page</a> and <a href="https://politicalscience.rice.edu/graduate/application-faqs" target="_blank" rel="noopener">frequently asked questions page</a> in detail.</p>
+          <p>You can also request more information from Rice about graduate study:</p>
+          <ul class="link-list">
+            <li><a href="https://graduate.rice.edu/request-information" target="_blank" rel="noopener">Request information about graduate study at Rice</a></li>
+          </ul>
+        </div>
+      </details>
+
     </div>
   </section>
 
